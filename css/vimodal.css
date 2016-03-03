@@ -1,0 +1,65 @@
+body{
+    height: 3000px;
+}
+.vimodal{
+    width: 500px;
+    height: 100px;
+    position: relative;
+    margin: 50px;
+    border: #ccc solid 1px;
+    background: #fff;
+}
+.vimodal textarea{
+    width: 100%;
+    height: 100%;
+}
+.vimodal-box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background: #fff;
+    display: block;
+    border: #ccc solid 1px;
+    -webkit-transition: all 0.6s, height 1s;
+    transition: all 0.6s, height 1s;
+    opacity: 1; 
+    visibility: hidden;
+}
+.vimodal-box .loading{
+    background: url(../images/ajax-loader.gif) no-repeat center center;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.vimodal-box.in{
+    top: 10%;
+    left: 30%;
+    position: fixed;
+    width: 800px;
+    height: 100px;
+    z-index: 10;
+}
+#statusModal{
+    display: none;
+    width: 800px;
+    height: 500px;
+}
+.vimodal-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    -webkit-transition: all 1s, height 1.2s;
+    transition: all 1s, height 1.2s;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+.vimodal-overlay.fade{
+    opacity: 0.6;
+    z-index: 2;
+}

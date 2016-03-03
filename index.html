@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="css/vimodal.css" charset="utf-8"/>
+        <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+        <script type="text/javascript" src="js/vimodal.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.vimodal').viModal({
+                    close_link: false
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="vimodal" data-url="statusModal">
+            <form action="">
+                <textarea name="message" class="vimodal-link"></textarea>
+                <a href="#" class="vimodal-link">Click</a>
+            </form>
+        </div>
+        <div id="statusModal">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis dictum tellus, sed condimentum sem scelerisque non. In neque diam, maximus quis egestas sit amet, facilisis rhoncus risus. Vivamus faucibus id libero id suscipit. Quisque dui purus, consectetur at egestas id, mattis eget justo. Mauris euismod nibh eget odio commodo, vitae sagittis leo tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer hendrerit nunc felis, at faucibus odio varius sit amet. Nunc ac sagittis magna.
+
+Ut vehicula in quam et semper. Cras et ex augue. Sed sed sapien non odio pulvinar efficitur a sed libero. Maecenas malesuada, sapien eu finibus dapibus, libero dolor fringilla justo, id suscipit enim lectus nec magna. Praesent nec tincidunt turpis, id volutpat nisi. Quisque lorem massa, rhoncus non interdum eget, eleifend venenatis tortor. Vestibulum vulputate egestas mattis.</p>
+            <a href="/" class="vimodal-close">Close</a>
+        </div>
+
+    </body>
+</html>
