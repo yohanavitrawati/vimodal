@@ -38,9 +38,10 @@
         var modalWidth = excBox.outerWidth(),
             modalHeight = excBox.outerHeight(),
             modalTop = win.height() / 2 - excBox.height() / 2,
-            modalLeft = win.width() / 2 - excBox.width() / 2;
+            modalLeft = win.width() / 2 - excBox.width() / 2,
+            modalMargLeft = (modalWidth / 2) - modalWidth;
         
-        //when link on click
+        //link on click
         link.click(function(e){
             box.css('visibility', 'visible');
             //box.show(function(){
@@ -48,9 +49,9 @@
                 e.preventDefault();
                 overlay.addClass('fade');
                 box.fadeIn('fast', function(){
-                    box.css({top: modalTop, left: modalLeft, width: modalWidth, height: modalHeight}).addClass('in');
+                    box.css({top: modalTop, 'margin-left': modalMargLeft, left: '50%', width: modalWidth, height: modalHeight}).addClass('in');
                     setTimeout(function(){
-                        if(box.width() === modalWidth){
+                        if(box.height() === modalHeight){
                             moveBox();
                         }
                     }, 1000);
@@ -71,9 +72,9 @@
         var closeModal = function(){
             excBox.fadeOut('fast', function(){
                 overlay.removeClass('fade');
-                box.css({top: boxTop, left: boxLeft, width: boxWidth, height: boxHeight}).removeClass('in');
+                box.css({top: boxTop, left: boxLeft, 'margin-left': 0, width: boxWidth, height: boxHeight}).removeClass('in');
                 setTimeout(function(){
-                    if(box.width() === boxWidth){
+                    if(box.height() === boxHeight){
                         box.hide();
                     }
                 }, 1000);
@@ -82,20 +83,20 @@
             
         };
         
-        //when click close link
+        //click close link
         $('.vimodal-close').click(function(e){
             e.preventDefault();
            closeModal(); 
         });
         
-        //when click overlay
+        //click on overlay
         if(opt.close_overlay){
             $('body').on('click','.vimodal-overlay.fade',function(){
                 closeModal(); 
             });
         }
         
-        //if scroll
+        //if window scroll
         win.scroll(function(){
             var scroll = $(window).scrollTop();
             if(!box.hasClass('in') && scroll > 0){
